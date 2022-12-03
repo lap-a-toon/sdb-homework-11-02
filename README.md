@@ -25,8 +25,23 @@
 ### Задание 3. Удаление по TTL в Memcached.
 
 Запишите в memcached несколько ключей с любыми именами и значениями, для которых выставлен TTL 5. 
-
-*Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.*
+```
+Сделал TTL 30 секунд, чтобы было нагляднее:
+set qwe 0 30 12
+привет
+STORED
+get qwe
+VALUE qwe 0 12
+привет
+END
+get qwe
+VALUE qwe 0 12
+привет
+END
+get qwe
+END
+```
+![memcached set get ttl](./images/memcached-set-get-ttl.jpg)
 
 ---
 
